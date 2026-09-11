@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GEBS AI Summit 2026 Agenda</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6fb;
+      color: #1F2A44;
+      padding-bottom: 90px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1F2A44, #3C4F85);
+      color: white;
+      padding: 28px 18px;
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
+      border-bottom: 5px solid #C9A227;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    header p {
+      font-size: 15px;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    .container {
+      padding: 16px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .top-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    button, .tool-link {
+      border: none;
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #1F2A44;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    button.secondary {
+      background: white;
+      color: #1F2A44;
+      border: 1px solid #d6d8df;
+    }
+
+    button.selected {
+      background: #2f7d62;
+      color: white;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-left: 6px solid #3C4F85;
+    }
+
+    .time {
+      font-weight: bold;
+      color: #3C4F85;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-top: 24px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #77787B;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    textarea, input {
+      width: 100%;
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #d6d8df;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      min-height: 110px;
+    }
+
+    details {
+      margin-top: 10px;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      padding: 6px 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #d6d8df;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      padding: 8px;
+      z-index: 20;
+    }
+
+    .nav button {
+      font-size: 11.5px;
+      padding: 9px 4px;
+      border-radius: 12px;
+    }
+
+    .notice {
+      background: #fff8e1;
+      border: 1px solid #e8d28a;
+      color: #5f4b00;
+      border-radius: 16px;
+      padding: 12px;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .tool-card {
+      background: white;
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-left: 6px solid #3C4F85;
+    }
+
+    .tool-card h3 {
+      margin-bottom: 6px;
+    }
+
+    .tool-card p {
+      margin: 0 0 12px;
+      font-size: 14px;
+      color: #55565A;
+      line-height: 1.4;
+    }
+
+    .tool-link {
+      width: 100%;
+      box-sizing: border-box;
+      background: linear-gradient(135deg, #1F2A44, #3C4F85);
+    }
+
+    .share-form {
+      background: white;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-left: 6px solid #C9A227;
+    }
+
+    .toolkit-sticky-board {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .sticky {
+      background: #fff4c2;
+      border: 1px solid #e8d28a;
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+      transform: rotate(-0.5deg);
+      overflow-wrap: anywhere;
+    }
+
+    .sticky:nth-child(2n) {
+      background: #e6ecf7;
+      border-color: #c7d2e8;
+      transform: rotate(0.5deg);
+    }
+
+    .sticky:nth-child(3n) {
+      background: #e8f3ea;
+      border-color: #c9dfce;
+      transform: rotate(-0.25deg);
+    }
+
+    .sticky h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .sticky p {
+      margin: 6px 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .sticky a {
+      color: #3C4F85;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .small {
+      color: #77787B;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .danger {
+      background: #9b1c31;
+      color: white;
+    }
+
+    .row-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 700px) {
+      .top-buttons {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      header {
+        padding: 38px 32px;
+      }
+
+      header h1 {
+        font-size: 42px;
+      }
+
+      .tool-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .toolkit-sticky-board {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .nav button {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>GEBS AI Summit 2026</h1>
+  <p><strong>From Curiosity to Capability</strong></p>
+  <p>
+    An interactive mobile agenda designed to help faculty move from basic curiosity
+    about AI toward practical, confident use of AI tools in teaching, assessment,
+    research, course design, and academic productivity.
+  </p>
+</header>
+
+<div class="container">
+
+  <div class="top-buttons">
+    <button class="secondary" onclick="showSection('notes')">My Notes</button>
+    <button class="secondary" onclick="showSection('fun')">AI Fun</button>
+    <button class="secondary" onclick="showSection('toolkitboard')">Personal Toolkit</button>
+  </div>
+
+  <!-- Agenda and Schedule sections removed per request -->
+
+  <section id="notes">
+    <h2>My Summit Notes</h2>
+
+    <div class="card">
+      <h3>My Summit Goal</h3>
+      <textarea id="note-goal" oninput="saveNote('goal')" placeholder="By the end of today, I want to be able to..."></textarea>
+    </div>
+
+    <div class="card">
+      <h3>My AI Toolkit</h3>
+      <textarea id="note-toolkit" oninput="saveNote('toolkit')" placeholder="Tool 1:&#10;Tool 2:&#10;Tool 3:"></textarea>
+    </div>
+
+    <div class="card">
+      <h3>Action Items</h3>
+      <textarea id="note-actions" oninput="saveNote('actions')" placeholder="1.&#10;2.&#10;3."></textarea>
+    </div>
+
+    <button onclick="exportNotes()">Export Notes</button>
+  </section>
+
+  <section id="fun" class="hidden">
+    <h2>AI Fun</h2>
+    <div class="notice">
+      Tap any tool below to open it in a new browser tab. Some tools may require a free account or institutional access.
+    </div>
+
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h3>Wayground</h3>
+        <p>Create interactive learning experiences, student activities, quizzes, and classroom-ready engagement tools.</p>
+        <a class="tool-link" href="https://wayground.com/" target="_blank" rel="noopener noreferrer">Open Wayground ↗</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>NotebookLM</h3>
+        <p>Upload sources, organize knowledge, generate summaries, ask questions, and create study or research support materials.</p>
+        <a class="tool-link" href="https://notebooklm.google/?hl=en-GB" target="_blank" rel="noopener noreferrer">Open NotebookLM ↗</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>Edcafe</h3>
+        <p>Explore AI-powered education tools for creating teaching resources, activities, and classroom materials.</p>
+        <a class="tool-link" href="https://www.edcafe.ai/" target="_blank" rel="noopener noreferrer">Open Edcafe ↗</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>Research Rabbit</h3>
+        <p>Discover papers, build research collections, and explore connected literature through visual research maps.</p>
+        <a class="tool-link" href="https://www.researchrabbit.ai/" target="_blank" rel="noopener noreferrer">Open Research Rabbit ↗</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>Suno AI</h3>
+        <p>Generate music and audio ideas with AI. Useful for creative examples, engagement, and exploring multimodal AI.</p>
+        <a class="tool-link" href="https://suno.com/home" target="_blank" rel="noopener noreferrer">Open Suno AI ↗</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>ChatGPT</h3>
+        <p>Use AI for brainstorming, course design, assessment revision, research support, writing, and productivity workflows.</p>
+        <a class="tool-link" href="https://openai.com/" target="_blank" rel="noopener noreferrer">Open ChatGPT ↗</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>Quizlet</h3>
+        <p>Create study sets, flashcards, practice activities, and student review tools.</p>
+        <a class="tool-link" href="https://quizlet.com/" target="_blank" rel="noopener noreferrer">Open Quizlet ↗</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>Kahoot</h3>
+        <p>Create live quizzes, polls, and game-based learning activities for classroom engagement.</p>
+        <a class="tool-link" href="https://kahoot.com/" target="_blank" rel="noopener noreferrer">Open Kahoot ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="toolkitboard" class="hidden">
+    <h2>AI Personal Toolkit</h2>
+    <div class="notice">
+      As you discover useful AI tools during the summit, add them to your own personal toolkit. Your sticky notes save on this device and can be exported at the end of the day.
+    </div>
+
+    <div class="share-form">
+      <h3>Add a Tool to My Toolkit</h3>
+      <input id="toolkit-tool-name" type="text" placeholder="Tool or app name" />
+      <input id="toolkit-tool-link" type="url" placeholder="Link to the site or app" />
+      <textarea id="toolkit-tool-note" placeholder="How will you use this tool?"></textarea>
+      <input id="toolkit-tool-purpose" type="text" placeholder="Category or purpose, optional" />
+      <div class="row-buttons">
+        <button onclick="addToolkitItem()">Add to My Toolkit</button>
+        <button class="secondary" onclick="exportPersonalToolkit()">Export Toolkit</button>
+      </div>
+      <button class="danger" style="margin-top:10px;width:100%;" onclick="clearPersonalToolkit()">Clear Personal Toolkit on This Device</button>
+    </div>
+
+    <div id="toolkit-sticky-board" class="toolkit-sticky-board"></div>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button onclick="showSection('notes')">My Notes</button>
+  <button onclick="showSection('fun')">AI Fun</button>
+  <button onclick="showSection('toolkitboard')">Personal Toolkit</button>
+</div>
+
+<script>
+  const sessions = {
+    breakfast: ["7:30 – 8:00 AM", "Breakfast", "Smyre Pre-Function Area"],
+    eatman: ["8:05 – 8:10 AM", "Welcome – Dr. Danita Eatman", "Smyre Pre-Function Area"],
+    anachebe: ["8:10 – 8:15 AM", "Welcome – Dr. Ngozi Anachebe", "Smyre Pre-Function Area"],
+    kittles: ["8:15 – 8:20 AM", "Welcome – Dr. Rick Kittles", "Smyre Pre-Function Area"],
+    logistics: ["8:20 – 8:25 AM", "Logistics and Summit Overview – Dr. Ernest Ricks", "Smyre Pre-Function Area"],
+    keynote: ["8:30 – 9:00 AM", "Opening Keynote: From Curiosity to Capability", "H101 - 103 (Opened)"],
+    examsoft: ["9:10 – 9:50 AM", "Session 1: Lessons in Examsoft", "H101 - 103 (Opened)"],
+    online: ["10:00 – 10:30 AM", "Session 2: Designing Engaging Learning Experiences with AI in an Online Environment", "H101 - 103 (Opened)"],
+    assessments: ["10:40 AM – 12:10 PM", "Session 3: Re-Designing Assessments of Learning for the Age of AI", "H101 - 103 (Opened)"],
+    lunch: ["12:15 – 1:15 PM", "Networking Lunch and Facilitated Discussions", "Smyre Pre-Function Area"],
+    agents: ["1:30 – 2:30 PM", "Session 4: Supervising AI Agents in Academic Life", "H101 - 103 (Opened)"],
+    researchtraining: ["2:40 – 4:10 PM", "Session 5: GenAI and Research Training: Integrating AI into Academic Workflows", "H101 - 103 (Opened)"],
+    closing: ["4:10 – 4:30 PM", "Closing Reflections and Next Steps", "H101 - 103 (Opened)"]
+  };
+
+  let selected = JSON.parse(localStorage.getItem("gebs_selected") || "[]");
+  let personalToolkit = JSON.parse(localStorage.getItem("gebs_personal_toolkit") || "[]");
+
+  function showSection(id) {
+    ["notes", "fun", "toolkitboard"].forEach(sectionId => {
+      const el = document.getElementById(sectionId);
+      if (el) el.classList.add("hidden");
+    });
+
+    const target = document.getElementById(id);
+    if (target) target.classList.remove("hidden");
+
+    if (id === "toolkitboard") renderPersonalToolkit();
+
+    window.scrollTo(0, 0);
+  }
+
+  function toggleSession(id) {
+    if (selected.includes(id)) {
+      selected = selected.filter(item => item !== id);
+    } else {
+      selected.push(id);
+    }
+
+    localStorage.setItem("gebs_selected", JSON.stringify(selected));
+    updateButtons();
+    renderSchedule();
+  }
+
+  function updateButtons() {
+    Object.keys(sessions).forEach(id => {
+      const button = document.getElementById("btn-" + id);
+      if (!button) return;
+
+      if (selected.includes(id)) {
+        button.textContent = "Added ✓";
+        button.classList.add("selected");
+        button.classList.remove("secondary");
+      } else {
+        button.textContent = "Add to My Schedule";
+        button.classList.remove("selected");
+        button.classList.add("secondary");
+      }
+    });
+  }
+
+  function renderSchedule() {
+    const list = document.getElementById("schedule-list");
+    if (!list) return;
+
+    if (selected.length === 0) {
+      list.innerHTML = "No sessions selected yet.";
+      return;
+    }
+
+    list.innerHTML = selected.map(id => {
+      const item = sessions[id];
+      if (!item) return "";
+      return `
+        <div class="schedule-item">
+          <strong>${item[0]}</strong><br>
+          ${item[1]}<br>
+          <span style="color:#77787B;">Location: ${item[2]}</span>
+        </div>
+      `;
+    }).join("");
+  }
+
+  function saveNote(id) {
+    const box = document.getElementById("note-" + id);
+    if (!box) return;
+    const note = box.value;
+    localStorage.setItem("gebs_note_" + id, note);
+  }
+
+  function loadNotes() {
+    const allNoteIds = [
+      "breakfast", "eatman", "anachebe", "kittles", "logistics", "keynote",
+      "examsoft", "online", "assessments", "lunch", "agents", "researchtraining",
+      "closing", "goal", "toolkit", "actions"
+    ];
+
+    allNoteIds.forEach(id => {
+      const saved = localStorage.getItem("gebs_note_" + id);
+      const box = document.getElementById("note-" + id);
+      if (saved && box) box.value = saved;
+    });
+  }
+
+  function exportNotes() {
+    let text = "GEBS AI Summit 2026 Notes\n\n";
+
+    text += "MY CUSTOMIZED SCHEDULE\n";
+    if (selected.length === 0) {
+      text += "No sessions selected.\n";
+    } else {
+      selected.forEach(id => {
+        const item = sessions[id];
+        if (item) text += "- " + item[0] + " | " + item[1] + " | " + item[2] + "\n";
+      });
+    }
+
+    text += "\nNOTES\n";
+
+    Object.keys(sessions).forEach(id => {
+      const note = localStorage.getItem("gebs_note_" + id);
+      if (note) text += "\n" + sessions[id][1] + "\n" + note + "\n";
+    });
+
+    ["goal", "toolkit", "actions"].forEach(id => {
+      const note = localStorage.getItem("gebs_note_" + id);
+      if (note) text += "\n" + id.toUpperCase() + "\n" + note + "\n";
+    });
+
+    downloadTextFile(text, "GEBS-AI-Summit-2026-Notes.txt");
+  }
+
+  function addToolkitItem() {
+    const name = document.getElementById("toolkit-tool-name").value.trim();
+    const link = document.getElementById("toolkit-tool-link").value.trim();
+    const note = document.getElementById("toolkit-tool-note").value.trim();
+    const purpose = document.getElementById("toolkit-tool-purpose").value.trim();
+
+    if (!name || !link) {
+      alert("Please add at least the tool name and link.");
+      return;
+    }
+
+    let safeLink = link;
+    if (!safeLink.startsWith("http://") && !safeLink.startsWith("https://")) {
+      safeLink = "https://" + safeLink;
+    }
+
+    personalToolkit.unshift({
+      name: name,
+      link: safeLink,
+      note: note,
+      purpose: purpose,
+      date: new Date().toLocaleString()
+    });
+
+    localStorage.setItem("gebs_personal_toolkit", JSON.stringify(personalToolkit));
+
+    document.getElementById("toolkit-tool-name").value = "";
+    document.getElementById("toolkit-tool-link").value = "";
+    document.getElementById("toolkit-tool-note").value = "";
+    document.getElementById("toolkit-tool-purpose").value = "";
+
+    renderPersonalToolkit();
+  }
+
+  function renderPersonalToolkit() {
+    const board = document.getElementById("toolkit-sticky-board");
+
+    if (!personalToolkit.length) {
+      board.innerHTML = `
+        <div class="sticky">
+          <h3>No tools added yet</h3>
+          <p>Add your first AI tool above. Your personal toolkit will appear here as sticky notes.</p>
+        </div>
+      `;
+      return;
+    }
+
+    board.innerHTML = personalToolkit.map((item, index) => `
+      <div class="sticky">
+        <h3>${escapeHtml(item.name)}</h3>
+        <p>${escapeHtml(item.note || "No description added yet.")}</p>
+        <p><a href="${escapeAttribute(item.link)}" target="_blank" rel="noopener noreferrer">Open tool ↗</a></p>
+        <p class="small">${item.purpose ? "Category/Purpose: " + escapeHtml(item.purpose) + "<br>" : ""}${escapeHtml(item.date || "")}</p>
+        <button class="danger" onclick="deleteToolkitItem(${index})">Remove</button>
+      </div>
+    `).join("");
+  }
+
+  function deleteToolkitItem(index) {
+    personalToolkit.splice(index, 1);
+    localStorage.setItem("gebs_personal_toolkit", JSON.stringify(personalToolkit));
+    renderPersonalToolkit();
+  }
+
+  function clearPersonalToolkit() {
+    if (!confirm("Clear all Personal Toolkit sticky notes saved on this device?")) return;
+    personalToolkit = [];
+    localStorage.setItem("gebs_personal_toolkit", JSON.stringify(personalToolkit));
+    renderPersonalToolkit();
+  }
+
+  function exportPersonalToolkit() {
+    let text = "GEBS AI Summit 2026 Personal Toolkit\n\n";
+
+    if (!personalToolkit.length) {
+      text += "No tools added yet.\n";
+    } else {
+      personalToolkit.forEach(item => {
+        text += "Tool: " + item.name + "\n";
+        text += "Link: " + item.link + "\n";
+        text += "Note: " + (item.note || "") + "\n";
+        text += "Category/Purpose: " + (item.purpose || "") + "\n";
+        text += "Date: " + (item.date || "") + "\n\n";
+      });
+    }
+
+    downloadTextFile(text, "GEBS-AI-Summit-2026-Personal-Toolkit.txt");
+  }
+
+  function downloadTextFile(text, filename) {
+    const blob = new Blob([text], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+  }
+
+  function escapeHtml(text) {
+    return String(text)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function escapeAttribute(text) {
+    return escapeHtml(text).replaceAll("`", "&#096;");
+  }
+
+  loadNotes();
+  updateButtons();
+  renderPersonalToolkit();
+</script>
+
+</body>
+</html>
